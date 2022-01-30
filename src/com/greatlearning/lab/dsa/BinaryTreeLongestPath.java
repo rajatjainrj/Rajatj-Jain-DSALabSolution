@@ -39,6 +39,9 @@ public class BinaryTreeLongestPath {
     }
 
     private void printLongestPath(Node root) {
+        if(root == null){
+            return;
+        }
         if(root.left == null && root.right == null){
             // LEAF Node
             System.out.print(root.key + " ");
@@ -50,7 +53,7 @@ public class BinaryTreeLongestPath {
         if (leftTreeHeight > rightTreeHeight) {
             //recursively check left tree
             printLongestPath(root.left);
-        } else if (leftTreeHeight < rightTreeHeight) {
+        } else {
             //recursively check right tree
             printLongestPath(root.right);
         }
